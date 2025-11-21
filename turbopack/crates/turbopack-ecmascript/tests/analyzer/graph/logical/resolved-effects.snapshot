@@ -26,4 +26,4 @@
 
 13 -> 14 free var = FreeVar(global)
 
-0 -> 15 conditional = side-effectful({})
+0 -> 15 conditional = effectful({})
