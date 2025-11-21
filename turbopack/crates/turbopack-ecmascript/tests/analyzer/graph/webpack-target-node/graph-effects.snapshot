@@ -2428,10 +2428,13 @@
         ),
         args: [
             Value(
-                Variable(
-                    (
-                        "moduleId",
-                        #6,
+                Effectful(
+                    2,
+                    Variable(
+                        (
+                            "moduleId",
+                            #6,
+                        ),
                     ),
                 ),
             ),

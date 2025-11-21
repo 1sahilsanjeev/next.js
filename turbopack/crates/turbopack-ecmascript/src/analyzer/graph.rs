@@ -809,7 +809,7 @@ impl EvalContext {
             }) => JsValue::WellKnownObject(WellKnownObjectKind::ImportMeta),
 
             Expr::Assign(AssignExpr { op, right, .. }) => match op {
-                AssignOp::Assign => self.eval(right),
+                AssignOp::Assign => JsValue::effectful(self.eval(right)),
                 _ => JsValue::unknown_empty(true, "compound assignment expression"),
             },
 

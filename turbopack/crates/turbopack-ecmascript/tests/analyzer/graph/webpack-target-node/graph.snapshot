@@ -2,10 +2,10 @@
     (
         "*arrow function 1213*",
         Function(
-            4,
+            5,
             1213,
             Call(
-                3,
+                4,
                 Variable(
                     (
                         "__webpack_require__",
@@ -13,10 +13,13 @@
                     ),
                 ),
                 [
-                    Variable(
-                        (
-                            "moduleId",
-                            #6,
+                    Effectful(
+                        2,
+                        Variable(
+                            (
+                                "moduleId",
+                                #6,
+                            ),
                         ),
                     ),
                 ],
