@@ -121,7 +121,7 @@ use crate::{
     merged_module::MergedEcmascriptModule,
     parse::generate_js_source_map,
     references::{
-        analyze_ecmascript_module,
+        SideEffectsMode, analyze_ecmascript_module,
         async_module::OptionAsyncModule,
         esm::{base::EsmAssetReferences, export},
     },
@@ -768,7 +768,11 @@ impl Module for EcmascriptModuleAsset {
         Ok(if *pkg_side_effect_free.await? {
             pkg_side_effect_free
         } else {
-            Vc::cell(self.analyze().await?.has_side_effect_free_directive)
+            Vc::cell(matches!(
+                self.analyze().await?.side_effects,
+                SideEffectsMode::HasSideEffectFreeDirective
+                    | SideEffectsMode::LocallySideEffectFree
+            ))
         })
     }
 }
