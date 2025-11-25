@@ -9602,6 +9602,7 @@ dependencies = [
  "smallvec",
  "swc_core",
  "swc_sourcemap",
+ "tempfile",
  "tokio",
  "tracing",
  "turbo-prehash",
